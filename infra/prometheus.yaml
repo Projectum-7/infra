@@ -13,6 +13,7 @@ spec:
     targetRevision: v0.8.0
   destination:
     server: https://kubernetes.default.svc
+    namespace: infra
   syncPolicy:
     automated:
       selfHeal: true
