@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eventbus-controller
+  namespace: argo-events
+spec:
+  template:
+    spec:
+      containers:
+      - name: eventbus-controller
+        env:
+        - name: NATS_STREAMING_IMAGE
+          value: docker.io/library/nats-streaming:0.19.0-linux
+        - name: NATS_METRICS_EXPORTER_IMAGE
+          value: docker.io/veresij/prometheus-nats-exporter:v0.7.0
