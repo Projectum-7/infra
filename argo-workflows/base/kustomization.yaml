@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - https://github.com/argoproj/argo-workflows/releases/download/v3.1.5/install.yaml
+- templates.yaml
 patchesStrategicMerge:
 - patch-workflow-controller-configmap.yaml
 namespace: argo
