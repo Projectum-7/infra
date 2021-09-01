@@ -9,11 +9,11 @@ spec:
     - port: 12000
       targetPort: 12000
   github:
-    project_7:
+    project-7:
       owner: Projectum-7
-      repository: project_7
+      repository: project-7
       webhook:
-        endpoint: /project_7
+        endpoint: /project-7
         port: "12000"
         method: POST
         url: http://webhook.140.238.216.140.nip.io

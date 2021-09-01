@@ -9,7 +9,7 @@ spec:
   project: infra
   source:
     path: argo-cd/overlays/infra
-    repoURL: https://github.com/Projectum-7/project_7_infra.git
+    repoURL: https://github.com/Projectum-7/infra.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
