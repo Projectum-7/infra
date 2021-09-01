@@ -2,8 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - namespace.yaml
-- secrets/project_7-deploy-key.yaml
-- secrets/project_7-infra-deploy-key.yaml
+- secrets/project-7-deploy-key.yaml
+- secrets/infra-deploy-key.yaml
 - secrets/regcred.yaml
 - argo-workflows-ssh-config-cm.yaml
 - rbac.yaml

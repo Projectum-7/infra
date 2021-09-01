@@ -8,7 +8,7 @@ metadata:
 spec:
   project: infra
   source:
-    repoURL: https://github.com/Projectum-7/project_7_infra.git
+    repoURL: https://github.com/Projectum-7/infra.git
     targetRevision: HEAD
     path: infra
   destination:
