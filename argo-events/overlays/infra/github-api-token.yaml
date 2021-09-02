@@ -1,0 +1,13 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: github-access
+  namespace: argo-events
+spec:
+  encryptedData:
+    token: AgCUV7fbI3FjA5R03188VtrBT99E/Yeppw8BFOclRO4akaa3piTgPuuIecCo4sJZ1ctMlGycmyHgrF3hkQNuNjoaOv8Uu5oADhAQDEMCtc6ci4vM/MIe/lFFyf8aKnVPuC7GRuS2TzIAVkYEaUcU9xgo9V86kQ2j3HCwy3SWfUVckUzwY6Nz29yZlqvbCP6XaH15EWJjyaF+I8RpZQ/5lXjK8Wkssdu5HtMSOgpLfk4SdSBbVG54+gIh9A+OWEoqya5JhnH/JDF0lqZBrtQFU+vfOpu7i6mV7lT3iB0rtPKKl4cStd0FEJO8U52VSnFBUf1rkx7vCBrLKxiw8n3b7dWFhj3hgEiJwWU82Y7kkfQdiMRsBq9JwiSTXcKpemMrnRZI5fqXkv75NY3FcA8fHUy2ZzEp7jUOZdDPfpe6Po6smnyBN52ZDAXYzEA8LUcgeJck4ocghI6CehRu2bPKl6siETfeAuai5xMCuxKpwNtCxC4MJtyujv9tULXrVH5ogJna7rDJT2DenITPzhlsYSSOneCIxjrALo81Zr++do74QZyIBmB8TZ9jiXR50+I5G0MAaQdB7oTIQ7ac52gx5vt5wWKqdSDeZ4cBOV8iJnENTalGTSTj1icjIoJQbfg6gwSVb1ZatFfwMT0pj+OfLx9a129YkS8K369yU96S81tbBOgjcyFgC36rE+zCDaj+743E1g/BS7cm6A+wQ0jHPZZ87OK8P7lzbSR0j6kX6BpLKpQ=
+  template:
+    metadata:
+      name: github-access
+      namespace: argo-events
+    type: kubernetes.io/ssh-auth
