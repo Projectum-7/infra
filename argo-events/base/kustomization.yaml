@@ -4,4 +4,6 @@ resources:
 - namespace.yaml
 - https://raw.githubusercontent.com/argoproj/argo-events/v1.4.0/manifests/install.yaml
 - event-bus.yaml
+patchesStrategicMerge:
+- patch-cluster-role.yaml
 namespace: argo-events
