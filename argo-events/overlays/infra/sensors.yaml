@@ -44,7 +44,7 @@ spec:
                   items:
                     - key: .dockerconfigjson
                       path: config.json
-              - name: ssh-config   
+              - name: ssh-config
                 configMap:
                   name: argo-workflows-ssh-config
               - name: ssh-keys
