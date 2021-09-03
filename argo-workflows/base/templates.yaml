@@ -45,7 +45,7 @@ spec:
       command: [sh]
       source: |
         set -e
-        sleep 120
+        sleep 1200
         git clone {{inputs.parameters.repo_ssh_url}} project
         cd project
         sleep 2
