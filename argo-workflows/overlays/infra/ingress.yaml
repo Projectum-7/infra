@@ -4,17 +4,17 @@ metadata:
   name: argo-workflows-server
   namespace: argo
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/rewrite-target: /$2
+    ingress.kubernetes.io/protocol: https
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
+      - backend:
           service:
-           name: argo-server
-           port:
-             number: 2746
+            name: argo-server
+            port:
+              number: 2746
+        path: /argo(/|$)(.*)
+        pathType: Prefix
     host: argo-workflows.140.238.216.140.nip.io
-
