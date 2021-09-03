@@ -9,10 +9,19 @@ spec:
   - name: github
     eventSourceName: github
     eventName: project-7
+    filters:
+      data:
+        - path: headers.X-Github-Event.0
+          type: string
+          value:
+            - "push"
+        - path: body.ref
+          type: string
+          value:
+            - "refs/heads/main"
   triggers:
   - template:
       name: trigger
-      log: {}
       argoWorkflow:
         group: argoproj.io
         version: v1alpha1
@@ -66,6 +75,25 @@ spec:
                         value: "enyediaz/"
                       - name: container_tag
                         value: ""
+                  - name: promote-production
+                    templateRef:
+                      name: promote
+                      template: promote
+                      clusterScope: true
+                    arguments:
+                      parameters:
+                      - name: environment
+                        value: production
+                      - name: repo_ssh_url
+                        value: ""
+                      - name: image_owner
+                        value: enyediaz
+                      - name: image_name
+                        value: ""
+                      - name: tag
+                        value: ""
+                    dependencies:
+                    - build
         parameters:
         - src:
             dependencyName: github
@@ -88,3 +116,7 @@ spec:
             dependencyName: github
             dataKey: body.after
           dest: spec.templates.0.dag.tasks.0.arguments.parameters.4.value
+        - src:
+            dependencyName: github
+            dataKey: body.repository.ssh_url
+          dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
