@@ -12,6 +12,7 @@ spec:
   triggers:
   - template:
       name: trigger
+      log: {}
       argoWorkflow:
         group: argoproj.io
         version: v1alpha1
@@ -22,7 +23,7 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Workflow
             metadata:
-              generateName: project-7-
+              generateName: project-7-push-to-master
               namespace: argo-workflows
             spec:
               entrypoint: build
@@ -44,7 +45,6 @@ spec:
                   items:
                   - key: ssh-privatekey
                     path: id_ed25519
-              
               templates:
               - name: build
                 dag:
