@@ -94,7 +94,7 @@ spec:
                         value: ""
                     # dependencies:
                     # - build
-        # parameters:
+        parameters:
         # - src:
         #     dependencyName: github
         #     dataKey: body.repository.git_url
@@ -116,7 +116,15 @@ spec:
         #     dependencyName: github
         #     dataKey: body.after
         #   dest: spec.templates.0.dag.tasks.0.arguments.parameters.4.value
-        # - src:
-        #     dependencyName: github
-        #     dataKey: body.repository.ssh_url
-        #   dest: spec.templates.0.dag.tasks.1.arguments.parameters.1.value
+        - src:
+            dependencyName: github
+            dataKey: body.repository.ssh_url
+          dest: spec.templates.0.dag.tasks.0.arguments.parameters.1.value
+        - src:
+            dependencyName: github
+            dataKey: body.repository.name
+          dest: spec.templates.0.dag.tasks.0.arguments.parameters.3.value
+        - src:
+            dependencyName: github
+            dataKey: body.after
+          dest: spec.templates.0.dag.tasks.0.arguments.parameters.4.value

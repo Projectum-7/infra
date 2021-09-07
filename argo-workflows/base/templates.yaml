@@ -45,10 +45,11 @@ spec:
       command: [sh]
       source: |
         set -e
-        sleep 1200
+        
         git clone {{inputs.parameters.repo_ssh_url}} project
         cd project
-        sleep 2
+
+        sleep 1200
         echo BEFORE:
         cat {{inputs.parameters.environment}}/{{inputs.parameters.image_name}}.yaml
         echo AFTER:
