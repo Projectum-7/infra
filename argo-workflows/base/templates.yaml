@@ -45,7 +45,6 @@ spec:
       command: [sh]
       source: |
         set -e
-        
         git clone {{inputs.parameters.repo_ssh_url}} infra
         cd infra
         echo BEFORE:
