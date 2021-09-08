@@ -46,10 +46,8 @@ spec:
       source: |
         set -e
         
-        git clone {{inputs.parameters.repo_ssh_url}} project
-        cd project
-
-        sleep 1200
+        git clone {{inputs.parameters.repo_ssh_url}} infra
+        cd infra
         echo BEFORE:
         cat {{inputs.parameters.environment}}/{{inputs.parameters.image_name}}.yaml
         echo AFTER:
