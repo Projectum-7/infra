@@ -13,7 +13,7 @@ spec:
     targetRevision: HEAD
     kustomize:
       images:
-      - enyediaz/project-7:fd213e842d520d80d37f9816f35c49f275067dd0
+      - enyediaz/project-7:0c4e949a7fe4399b5e5f0c94a5605e34fab24233
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: production
