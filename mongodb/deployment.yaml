@@ -19,3 +19,16 @@ spec:
         - name: mongodbport
           containerPort: 27017
           protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+spec:
+  ports:
+  - name: mongodbport
+    port: 27017
+    protocol: TCP
+    targetPort: 27017
+  selector:
+    app.kubernetes.io/name: mongodb
